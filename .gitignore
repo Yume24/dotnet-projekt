@@ -417,8 +417,6 @@ CarWorkshopManagementSystem/app.db
 appsettings.Development.json
 secrets.json
 
-CarWorkshopManagementSystem/wwwroot/lib/
-
 # Raporty, logi, pliki tymczasowe
 *.pdf
 *.log
