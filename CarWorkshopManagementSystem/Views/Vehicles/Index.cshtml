@@ -1,23 +1,59 @@
 @model IEnumerable<CarWorkshopManagementSystem.Models.Vehicle>
 
+@{
+    string brand = Context.Request.Query["brand"];
+    string modelName = Context.Request.Query["model"];
+    string plate = Context.Request.Query["plate"];
+    string year = Context.Request.Query["year"];
+    string sortBy = Context.Request.Query["sortBy"];
+    string sortOrder = Context.Request.Query["sortOrder"] == "desc" ? "asc" : "desc";
+}
+
 <h2>Vehicle List</h2>
+
+<form method="get" class="mb-3">
+    <div class="row">
+        <div class="col">
+            <input type="text" name="brand" value="@brand" class="form-control" placeholder="Brand" />
+        </div>
+        <div class="col">
+            <input type="text" name="model" value="@modelName" class="form-control" placeholder="Model" />
+        </div>
+        <div class="col">
+            <input type="text" name="plate" value="@plate" class="form-control" placeholder="License Plate" />
+        </div>
+        <div class="col">
+            <input type="number" name="year" value="@year" class="form-control" placeholder="Year" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <thead>
-    <tr>
-        <th>Brand</th>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Owner ID</th>
-    </tr>
+        <tr>
+            <th><a asp-route-sortBy="Id" asp-route-sortOrder="@sortOrder">ID</a></th>
+            <th><a asp-route-sortBy="Brand" asp-route-sortOrder="@sortOrder">Brand</a></th>
+            <th><a asp-route-sortBy="Model" asp-route-sortOrder="@sortOrder">Model</a></th>
+            <th><a asp-route-sortBy="Year" asp-route-sortOrder="@sortOrder">Year</a></th>
+            <th><a asp-route-sortBy="LicensePlate" asp-route-sortOrder="@sortOrder">License Plate</a></th>
+            <th>Details</th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var vehicle in Model)
+    @foreach (var v in Model)
     {
         <tr>
-            <td>@vehicle.Brand</td>
-            <td>@vehicle.Model</td>
-            <td>@vehicle.Year</td>
-            <td>@vehicle.OwnerId</td>
+            <td>@v.Id</td>
+            <td>@v.Brand</td>
+            <td>@v.Model</td>
+            <td>@v.Year</td>
+            <td>@v.LicensePlate</td>
+            <td>
+                <a asp-action="Owner" asp-route-id="@v.Id" class="btn btn-info btn-sm">Owner details</a>
+            </td>
         </tr>
     }
     </tbody>

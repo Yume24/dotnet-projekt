@@ -9,19 +9,19 @@
 <form method="get" class="mb-3">
     <div class="row">
         <div class="col">
-            <input type="text" name="name" value="@name" class="form-control" placeholder="Imię" />
+            <input type="text" name="name" value="@name" class="form-control" placeholder="Name" />
         </div>
         <div class="col">
-            <input type="text" name="surname" value="@surname" class="form-control" placeholder="Nazwisko" />
+            <input type="text" name="surname" value="@surname" class="form-control" placeholder="Surname" />
         </div>
         <div class="col">
             <input type="text" name="email" value="@email" class="form-control" placeholder="Email" />
         </div>
         <div class="col">
-            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Telefon" />
+            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Phone number" />
         </div>
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Szukaj</button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
     </div>
 </form>
@@ -38,13 +38,13 @@
             <th>
                 <a asp-action="Index" asp-route-sortBy="Name" asp-route-sortOrder="@sortOrder"
                    asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Imię
+                    Name
                 </a>
             </th>
             <th>
                 <a asp-action="Index" asp-route-sortBy="Surname" asp-route-sortOrder="@sortOrder"
                    asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Nazwisko
+                    Surname
                 </a>
             </th>
             <th>
@@ -56,7 +56,7 @@
             <th>
                 <a asp-action="Index" asp-route-sortBy="PhoneNumber" asp-route-sortOrder="@sortOrder"
                    asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Telefon
+                    Phone number
                 </a>
             </th>
             <th>Details</th>
