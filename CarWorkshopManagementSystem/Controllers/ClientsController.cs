@@ -1,28 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
-using CarWorkshopManagementSystem.Models;
+using CarWorkshopManagementSystem.Services;
 
 namespace CarWorkshopManagementSystem.Controllers;
 
 public class ClientsController : Controller
 {
-    public IActionResult Overview()
+    private readonly IClientService _clientService;
+
+    public ClientsController(IClientService clientService)
     {
-        var client = new Client() { Id = 0, Email = "test", Name = "jan", Surname = "doe" , PhoneNumber = "342"};
-        return View(client);
+        _clientService = clientService;
     }
 
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Index()
     {
-        return View();
-    }
-
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    public IActionResult Edit(int id)
-    {
-        return View();
+        var clients = await _clientService.GetAllClientsAsync();
+        return View(clients);
     }
 }

@@ -1,0 +1,24 @@
+@model IEnumerable<CarWorkshopManagementSystem.Models.Client>
+
+<h2>Client list</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Phone number</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var client in Model)
+    {
+        <tr>
+            <td>@client.Name</td>
+            <td>@client.Surname</td>
+            <td>@client.Email</td>
+            <td>@client.PhoneNumber</td>
+        </tr>
+    }
+    </tbody>
+</table>

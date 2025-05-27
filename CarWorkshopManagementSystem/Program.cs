@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CarWorkshopManagementSystem.Data;
+using CarWorkshopManagementSystem.Services;
 
 namespace CarWorkshopManagementSystem;
 
@@ -20,6 +21,7 @@ public class Program
         builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
         builder.Services.AddControllersWithViews();
+        builder.Services.AddScoped<IClientService, ClientService>();
 
         var app = builder.Build();
 
