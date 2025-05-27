@@ -1,23 +1,81 @@
-@model IEnumerable<CarWorkshopManagementSystem.Models.Client>
+@{
+    string name = Context.Request.Query["name"];
+    string surname = Context.Request.Query["surname"];
+    string email = Context.Request.Query["email"];
+    string phone = Context.Request.Query["phone"];
+    string sortBy = Context.Request.Query["sortBy"];
+    string sortOrder = Context.Request.Query["sortOrder"] == "desc" ? "asc" : "desc";
+}
+<form method="get" class="mb-3">
+    <div class="row">
+        <div class="col">
+            <input type="text" name="name" value="@name" class="form-control" placeholder="Imię" />
+        </div>
+        <div class="col">
+            <input type="text" name="surname" value="@surname" class="form-control" placeholder="Nazwisko" />
+        </div>
+        <div class="col">
+            <input type="text" name="email" value="@email" class="form-control" placeholder="Email" />
+        </div>
+        <div class="col">
+            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Telefon" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Szukaj</button>
+        </div>
+    </div>
+</form>
 
-<h2>Client list</h2>
 <table class="table">
     <thead>
-    <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Email</th>
-        <th>Phone number</th>
-    </tr>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortBy="Id" asp-route-sortOrder="@sortOrder"
+                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
+                    ID
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortBy="Name" asp-route-sortOrder="@sortOrder"
+                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
+                    Imię
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortBy="Surname" asp-route-sortOrder="@sortOrder"
+                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
+                    Nazwisko
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortBy="Email" asp-route-sortOrder="@sortOrder"
+                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
+                    Email
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortBy="PhoneNumber" asp-route-sortOrder="@sortOrder"
+                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
+                    Telefon
+                </a>
+            </th>
+            <th>Details</th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var client in Model)
     {
         <tr>
+            <td>@client.Id</td>
             <td>@client.Name</td>
             <td>@client.Surname</td>
             <td>@client.Email</td>
             <td>@client.PhoneNumber</td>
+            <td>
+                <a asp-action="Vehicles" asp-route-id="@client.Id" class="btn btn-info btn-sm">
+                    Show details
+                </a>
+            </td>
         </tr>
     }
     </tbody>

@@ -1,0 +1,24 @@
+@model IEnumerable<CarWorkshopManagementSystem.Models.Vehicle>
+
+<h2>Vehicle List</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Owner ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var vehicle in Model)
+    {
+        <tr>
+            <td>@vehicle.Brand</td>
+            <td>@vehicle.Model</td>
+            <td>@vehicle.Year</td>
+            <td>@vehicle.OwnerId</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -10,5 +10,9 @@ public class Vehicle
     [Required]
     public string Model { get; set; }
     [Required]
+    public int Year { get; set; }
+    [Required]
+    public string LicensePlate { get; set; }
+    [Required]
     public int OwnerId { get; set; }
 }

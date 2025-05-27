@@ -1,0 +1,30 @@
+@model CarWorkshopManagementSystem.ViewModels.ClientVehiclesViewModel
+
+<h2>@Model.Client.Name @Model.Client.Surname's Vehicles:</h2>
+
+<p><strong>Email:</strong> @Model.Client.Email<br />
+    <strong>Phone number:</strong> @Model.Client.PhoneNumber</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>License Plate</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var v in Model.Vehicles)
+    {
+        <tr>
+            <td>@v.Brand</td>
+            <td>@v.Model</td>
+            <td>@v.Year</td>
+            <td>@v.LicensePlate</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Go back</a>
