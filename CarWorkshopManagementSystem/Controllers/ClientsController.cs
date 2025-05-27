@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using CarWorkshopManagementSystem.Services;
 using CarWorkshopManagementSystem.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarWorkshopManagementSystem.Controllers;
 
+[Authorize]
 public class ClientsController : Controller
 {
     private readonly IClientService _clientService;

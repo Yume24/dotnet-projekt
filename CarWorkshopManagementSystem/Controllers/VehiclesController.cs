@@ -1,8 +1,10 @@
 using CarWorkshopManagementSystem.Models;
 using CarWorkshopManagementSystem.Services;
 using CarWorkshopManagementSystem.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+[Authorize]
 public class VehiclesController : Controller
 {
     private readonly IVehicleService _vehicleService;
