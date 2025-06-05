@@ -36,6 +36,63 @@ public class VehiclesController : Controller
 
         return View(vm);
     }
+    [Authorize(Roles = "Admin")]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Create(Vehicle vehicle)
+    {
+        if (!ModelState.IsValid) return View(vehicle);
+
+        var success = await _vehicleService.CreateVehicleAsync(vehicle);
+        if (!success)
+            ModelState.AddModelError("", "Could not create vehicle.");
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+        if (vehicle == null) return NotFound();
+
+        return View(vehicle);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit(Vehicle vehicle)
+    {
+        if (!ModelState.IsValid) return View(vehicle);
+
+        var success = await _vehicleService.UpdateVehicleAsync(vehicle);
+        if (!success)
+            ModelState.AddModelError("", "Update failed.");
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
+        if (vehicle == null) return NotFound();
+
+        return View(vehicle);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        await _vehicleService.DeleteVehicleAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
 
 
 }

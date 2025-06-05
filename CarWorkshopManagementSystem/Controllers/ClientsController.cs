@@ -1,3 +1,4 @@
+using CarWorkshopManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using CarWorkshopManagementSystem.Services;
 using CarWorkshopManagementSystem.ViewModels;
@@ -38,5 +39,73 @@ public class ClientsController : Controller
         return View(viewModel);
     }
 
+    [Authorize(Roles = "Admin")]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Create(Client client)
+    {
+        if (!ModelState.IsValid)
+            return View(client);
+
+        var result = await _clientService.CreateClientAsync(client);
+        if (!result)
+        {
+            ModelState.AddModelError(string.Empty, "Failed to create client.");
+            return View(client);
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit(int id)
+    {
+        var client = await _clientService.GetClientByIdAsync(id);
+        if (client == null) return NotFound();
+
+        return View(client);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Edit(Client client)
+    {
+        if (!ModelState.IsValid)
+            return View(client);
+
+        var success = await _clientService.UpdateClientAsync(client);
+        if (!success)
+        {
+            ModelState.AddModelError(string.Empty, "Update failed.");
+            return View(client);
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var client = await _clientService.GetClientByIdAsync(id);
+        if (client == null) return NotFound();
+
+        return View(client); // pokazujemy stronę potwierdzenia
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var result = await _clientService.DeleteClientAsync(id);
+        if (!result)
+        {
+            return RedirectToAction(nameof(Index)); // możesz dodać komunikat o błędzie
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
 
 }

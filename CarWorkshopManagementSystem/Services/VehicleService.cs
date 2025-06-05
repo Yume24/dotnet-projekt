@@ -53,4 +53,36 @@ public class VehicleService : IVehicleService
 
         return await _context.Clients.FirstOrDefaultAsync(c => c.Id == vehicle.OwnerId);
     }
+    public async Task<bool> CreateVehicleAsync(Vehicle vehicle)
+    {
+        try
+        {
+            _context.Vehicles.Add(vehicle);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch { return false; }
+    }
+
+    public async Task<bool> UpdateVehicleAsync(Vehicle vehicle)
+    {
+        try
+        {
+            _context.Vehicles.Update(vehicle);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch { return false; }
+    }
+
+    public async Task<bool> DeleteVehicleAsync(int id)
+    {
+        var vehicle = await _context.Vehicles.FindAsync(id);
+        if (vehicle == null) return false;
+
+        _context.Vehicles.Remove(vehicle);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
 }

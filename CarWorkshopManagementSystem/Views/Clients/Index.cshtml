@@ -1,4 +1,11 @@
+@model IEnumerable<CarWorkshopManagementSystem.Models.Client>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@using Microsoft.AspNetCore.Authorization
+
 @{
+    ViewData["Title"] = "Client List";
+    var isAdmin = User.IsInRole("Admin");
     string name = Context.Request.Query["name"];
     string surname = Context.Request.Query["surname"];
     string email = Context.Request.Query["email"];
@@ -6,7 +13,14 @@
     string sortBy = Context.Request.Query["sortBy"];
     string sortOrder = Context.Request.Query["sortOrder"] == "desc" ? "asc" : "desc";
 }
+
 <h2>Clients</h2>
+
+@if (isAdmin)
+{
+    <a asp-action="Create" class="btn btn-primary mb-3">Create Client</a>
+}
+
 <form method="get" class="mb-3">
     <div class="row">
         <div class="col">
@@ -19,10 +33,10 @@
             <input type="text" name="email" value="@email" class="form-control" placeholder="Email" />
         </div>
         <div class="col">
-            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Phone number" />
+            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Phone" />
         </div>
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-secondary">Search</button>
         </div>
     </div>
 </form>
@@ -30,37 +44,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                <a asp-action="Index" asp-route-sortBy="Id" asp-route-sortOrder="@sortOrder"
-                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    ID
-                </a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortBy="Name" asp-route-sortOrder="@sortOrder"
-                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Name
-                </a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortBy="Surname" asp-route-sortOrder="@sortOrder"
-                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Surname
-                </a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortBy="Email" asp-route-sortOrder="@sortOrder"
-                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Email
-                </a>
-            </th>
-            <th>
-                <a asp-action="Index" asp-route-sortBy="PhoneNumber" asp-route-sortOrder="@sortOrder"
-                   asp-route-name="@name" asp-route-surname="@surname" asp-route-email="@email" asp-route-phone="@phone">
-                    Phone number
-                </a>
-            </th>
-            <th>Details</th>
+            <th><a asp-route-sortBy="Id" asp-route-sortOrder="@sortOrder">ID</a></th>
+            <th><a asp-route-sortBy="Name" asp-route-sortOrder="@sortOrder">Name</a></th>
+            <th><a asp-route-sortBy="Surname" asp-route-sortOrder="@sortOrder">Surname</a></th>
+            <th><a asp-route-sortBy="Email" asp-route-sortOrder="@sortOrder">Email</a></th>
+            <th><a asp-route-sortBy="PhoneNumber" asp-route-sortOrder="@sortOrder">Phone</a></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -73,9 +62,13 @@
             <td>@client.Email</td>
             <td>@client.PhoneNumber</td>
             <td>
-                <a asp-action="Vehicles" asp-route-id="@client.Id" class="btn btn-info btn-sm">
-                    Show details
-                </a>
+                <a asp-action="Vehicles" asp-route-id="@client.Id" class="btn btn-info btn-sm">View Vehicles</a>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@client.Id" class="btn btn-warning btn-sm ms-2">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@client.Id" class="btn btn-danger btn-sm ms-2">Delete</a>
+                }
             </td>
         </tr>
     }

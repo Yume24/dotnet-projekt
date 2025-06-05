@@ -52,4 +52,40 @@ public class ClientService : IClientService
             .Where(v => v.OwnerId == clientId)
             .ToListAsync();
     }
+    public async Task<bool> CreateClientAsync(Client client)
+    {
+        try
+        {
+            _context.Clients.Add(client);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+    public async Task<bool> UpdateClientAsync(Client client)
+    {
+        try
+        {
+            _context.Clients.Update(client);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+    public async Task<bool> DeleteClientAsync(int id)
+    {
+        var client = await _context.Clients.FindAsync(id);
+        if (client == null) return false;
+
+        _context.Clients.Remove(client);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
 }
