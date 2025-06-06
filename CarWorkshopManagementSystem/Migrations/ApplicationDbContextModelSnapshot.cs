@@ -51,6 +51,34 @@ namespace CarWorkshopManagementSystem.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("CarWorkshopManagementSystem.Models.Mechanic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Mechanics");
+                });
+
             modelBuilder.Entity("CarWorkshopManagementSystem.Models.Vehicle", b =>
                 {
                     b.Property<int>("Id")

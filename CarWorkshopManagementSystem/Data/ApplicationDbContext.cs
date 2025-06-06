@@ -13,4 +13,6 @@ public class ApplicationDbContext : IdentityDbContext
     
     public DbSet<Client> Clients { get; set; }
     public DbSet<Vehicle> Vehicles { get; set; }
+    public DbSet<Mechanic> Mechanics { get; set; }
+
 }

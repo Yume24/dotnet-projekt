@@ -24,6 +24,8 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddScoped<IClientService, ClientService>();
         builder.Services.AddScoped<IVehicleService, VehicleService>();
+        builder.Services.AddScoped<IMechanicService, MechanicService>();
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
