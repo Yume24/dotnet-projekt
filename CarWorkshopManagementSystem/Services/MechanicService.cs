@@ -68,4 +68,9 @@ public class MechanicService : IMechanicService
         return await query.ToListAsync();
     }
 
+    public async Task<List<Mechanic>> GetAllMechanicsAsync()
+    {
+        return await _context.Mechanics.ToListAsync();
+    }
+
 }

@@ -1,0 +1,21 @@
+@model CarWorkshopManagementSystem.Models.Mechanic
+
+@{
+    ViewData["Title"] = "Delete Mechanic";
+}
+
+<h2>Delete Mechanic</h2>
+
+<p>Are you sure you want to delete the following mechanic?</p>
+
+<div>
+    <strong>@Model.FirstName @Model.LastName</strong><br />
+    <span>@Model.Email</span><br />
+    <span>@Model.PhoneNumber</span>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

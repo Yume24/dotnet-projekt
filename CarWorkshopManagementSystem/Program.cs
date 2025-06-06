@@ -25,6 +25,7 @@ public class Program
         builder.Services.AddScoped<IClientService, ClientService>();
         builder.Services.AddScoped<IVehicleService, VehicleService>();
         builder.Services.AddScoped<IMechanicService, MechanicService>();
+        builder.Services.AddScoped<IServiceOrderService, ServiceOrderService>();
 
         var app = builder.Build();
 

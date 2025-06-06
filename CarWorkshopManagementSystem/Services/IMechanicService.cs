@@ -8,5 +8,6 @@ public interface IMechanicService
     Task<bool> UpdateAsync(Mechanic mechanic);
     Task<bool> DeleteAsync(int id);
     Task<List<Mechanic>> SearchMechanicsAsync(string firstName, string lastName, string email, string phone, string sortBy, string sortOrder);
+    Task<List<Mechanic>> GetAllMechanicsAsync();
 
 }

@@ -1,0 +1,21 @@
+
+@model CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto
+@{
+    var mechanics = ViewBag.Mechanics as List<CarWorkshopManagementSystem.Models.Mechanic>;
+}
+
+<h2>Przypisz mechanika do zlecenia #@Model.Id</h2>
+
+<form asp-action="AssignMechanic" method="post">
+    <input type="hidden" name="orderId" value="@Model.Id" />
+    <div class="form-group">
+        <label for="mechanicId">Wybierz mechanika:</label>
+        <select name="mechanicId" class="form-control">
+            @foreach (var mechanic in mechanics)
+            {
+                <option value="@mechanic.Id">@mechanic.FirstName @mechanic.LastName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Zapisz</button>
+</form>

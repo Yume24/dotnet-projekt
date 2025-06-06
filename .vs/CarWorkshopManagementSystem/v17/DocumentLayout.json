@@ -1,0 +1,275 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\models\\mechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\models\\mechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\imechanicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\imechanicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\mechanicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\mechanicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\controllers\\serviceorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\controllers\\serviceorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\serviceorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\serviceorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\iserviceorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\iserviceorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\dtos\\serviceorders\\serviceorderdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\dtos\\serviceorders\\serviceorderdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|c:\\users\\nikodem\\desktop\\studia\\dotnet-projekt\\carworkshopmanagementsystem\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD87E4DC-6A89-4F73-BF00-51D49916BF8A}|CarWorkshopManagementSystem\\CarWorkshopManagementSystem.csproj|solutionrelative:carworkshopmanagementsystem\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20250606213158_InitEverything.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Migrations\\20250606213158_InitEverything.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAYwFAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T21:31:59.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250606212946_InitEverything.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Migrations\\20250606212946_InitEverything.cs",
+              "ViewState": "AQIAAMIAAAAAAAAAAAAYwNAAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T21:29:47.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAmwBAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T21:23:39.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Mechanic.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Models\\Mechanic.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Models\\Mechanic.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Models\\Mechanic.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Models\\Mechanic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T21:17:23.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-06T21:07:51.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MechanicService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\MechanicService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\MechanicService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\MechanicService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\MechanicService.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAswEYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:59:50.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IMechanicService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IMechanicService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\IMechanicService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IMechanicService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\IMechanicService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:59:45.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Controllers\\ServiceOrdersController.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Controllers\\ServiceOrdersController.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Controllers\\ServiceOrdersController.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Controllers\\ServiceOrdersController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAA7wAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:57:54.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Program.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:48:32.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\ClientService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\ClientService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\ClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:44:50.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IClientService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IClientService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\IClientService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IClientService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\IClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:44:33.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IServiceOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IServiceOrderService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\IServiceOrderService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\IServiceOrderService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\IServiceOrderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:41:14.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ServiceOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\ServiceOrderService.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Services\\ServiceOrderService.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Services\\ServiceOrderService.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\ServiceOrderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:44:03.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServiceOrderDtos.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\DTOs\\ServiceOrders\\ServiceOrderDtos.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\DTOs\\ServiceOrders\\ServiceOrderDtos.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\DTOs\\ServiceOrders\\ServiceOrderDtos.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\DTOs\\ServiceOrders\\ServiceOrderDtos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T20:54:34.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "CarWorkshopManagementSystem\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Nikodem\\Desktop\\studia\\dotnet-projekt\\CarWorkshopManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "CarWorkshopManagementSystem\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T09:00:56.371Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

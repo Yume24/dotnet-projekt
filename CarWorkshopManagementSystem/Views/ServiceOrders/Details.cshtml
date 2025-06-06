@@ -1,0 +1,34 @@
+
+@model CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto
+
+<h2>Szczegóły zlecenia #@Model.Id</h2>
+
+<p><strong>Status:</strong> @Model.Status</p>
+<p><strong>Pojazd:</strong> @Model.Vehicle</p>
+<p><strong>Mechanik:</strong> @Model.Mechanic</p>
+<p><strong>Utworzone:</strong> @Model.CreatedAt.ToShortDateString()</p>
+
+<h4>Czynności:</h4>
+@foreach (var task in Model.Tasks)
+{
+    <div class="border p-2 mb-2">
+        <p><strong>Opis:</strong> @task.Description</p>
+        <p><strong>Koszt robocizny:</strong> @task.LaborCost zł</p>
+        <ul>
+            @foreach (var part in task.UsedParts)
+            {
+                <li>@part.PartName x @part.Quantity (@part.UnitPrice zł/szt.)</li>
+            }
+        </ul>
+    </div>
+}
+
+<h4>Komentarze:</h4>
+<ul>
+    @foreach (var comment in Model.Comments)
+    {
+        <li><strong>@comment.Author</strong> (@comment.Timestamp.ToShortDateString()): @comment.Content</li>
+    }
+</ul>
+
+<a asp-action="AssignMechanic" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Przypisz mechanika</a>
