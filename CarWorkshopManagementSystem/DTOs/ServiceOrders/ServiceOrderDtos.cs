@@ -25,6 +25,7 @@ public class ServiceOrderDetailsDto
     public string Status { get; set; }
     public string Vehicle { get; set; }
     public string? Mechanic { get; set; }
+    public int? MechanicId { get; set; }
     public DateTime CreatedAt { get; set; }
     public List<ServiceTaskDetailsDto> Tasks { get; set; } = new();
     public List<CommentDto> Comments { get; set; } = new();

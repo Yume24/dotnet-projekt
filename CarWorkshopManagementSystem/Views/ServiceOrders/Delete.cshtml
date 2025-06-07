@@ -1,21 +1,30 @@
-@model CarWorkshopManagementSystem.Models.Mechanic
+@model CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto
 
 @{
-    ViewData["Title"] = "Delete Mechanic";
+    ViewData["Title"] = "Delete Service Order";
 }
 
-<h2>Delete Mechanic</h2>
+<h1>Delete Service Order</h1>
 
-<p>Are you sure you want to delete the following mechanic?</p>
-
+<h3>Are you sure you want to delete this order?</h3>
 <div>
-    <strong>@Model.FirstName @Model.LastName</strong><br />
-    <span>@Model.Email</span><br />
-    <span>@Model.PhoneNumber</span>
-</div>
+    <dl class="row">
+        <dt class="col-sm-2">Vehicle</dt>
+        <dd class="col-sm-10">@Model.Vehicle</dd>
 
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+        <dt class="col-sm-2">Mechanic</dt>
+        <dd class="col-sm-10">@Model.Mechanic</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+
+        <dt class="col-sm-2">Created</dt>
+        <dd class="col-sm-10">@Model.CreatedAt.ToShortDateString()</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

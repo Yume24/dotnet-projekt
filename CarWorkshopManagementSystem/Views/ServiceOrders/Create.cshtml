@@ -1,27 +1,46 @@
-@model CarWorkshopManagementSystem.Models.Mechanic
+@model CarWorkshopManagementSystem.DTOs.ServiceOrders.CreateServiceOrderDto
 
 @{
-    ViewData["Title"] = "Create Mechanic";
+    ViewData["Title"] = "Create Service Order";
 }
 
-<h2>Create Mechanic</h2>
+<h1>Create Service Order</h1>
 
 <form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" class="form-control" />
+    <div class="mb-3">
+        <label for="VehicleId" class="form-label">Vehicle</label>
+        <select asp-for="VehicleId" class="form-select" asp-items="ViewBag.Vehicles">
+            <option value="">-- Select vehicle --</option>
+        </select>
     </div>
-    <div class="form-group">
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" class="form-control" />
+
+    <hr />
+    <h4>Tasks</h4>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input asp-for="Tasks[0].Description" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
+
+    <div class="mb-3">
+        <label class="form-label">Labor Cost</label>
+        <input asp-for="Tasks[0].LaborCost" class="form-control" type="number" step="0.01" />
     </div>
-    <div class="form-group">
-        <label asp-for="PhoneNumber"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
+
+    <h5>Used Part</h5>
+    <div class="mb-3">
+        <label class="form-label">Part Name</label>
+        <input asp-for="Tasks[0].UsedParts[0].PartName" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Save</button>
+
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input asp-for="Tasks[0].UsedParts[0].Quantity" class="form-control" type="number" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Unit Price</label>
+        <input asp-for="Tasks[0].UsedParts[0].UnitPrice" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
 </form>

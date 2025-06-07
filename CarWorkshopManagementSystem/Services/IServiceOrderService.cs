@@ -13,4 +13,7 @@ public interface IServiceOrderService
     Task<List<ServiceOrderDetailsDto>> GetAllAsync();
     Task<bool> AssignMechanicAsync(int orderId, int mechanicId);
     Task<bool> UpdateStatusAsync(int orderId, ServiceOrderStatus status);
+    Task UpdateServiceOrderAsync(EditServiceOrderDto dto);
+    Task DeleteServiceOrderAsync(int id);
+
 }

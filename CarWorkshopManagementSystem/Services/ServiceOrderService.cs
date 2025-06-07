@@ -56,6 +56,7 @@ public class ServiceOrderService : IServiceOrderService
                 CreatedAt = o.CreatedAt,
                 Vehicle = $"{o.Vehicle.Brand} {o.Vehicle.Model} ({o.Vehicle.LicensePlate})",
                 Mechanic = o.Mechanic != null ? $"{o.Mechanic.FirstName} {o.Mechanic.LastName}" : null,
+                MechanicId = o.MechanicId,
                 Tasks = o.Tasks.Select(t => new ServiceTaskDetailsDto
                 {
                     Description = t.Description,
@@ -108,4 +109,58 @@ public class ServiceOrderService : IServiceOrderService
         await _context.SaveChangesAsync();
         return true;
     }
+
+    public async Task UpdateServiceOrderAsync(EditServiceOrderDto dto)
+    {
+        var order = await _context.ServiceOrders
+            .Include(o => o.Tasks)
+            .ThenInclude(t => t.UsedParts)
+            .FirstOrDefaultAsync(o => o.Id == dto.Id);
+
+        if (order == null) return;
+
+        order.MechanicId = dto.MechanicId;
+        order.Status = dto.Status;
+
+        // Wyczyœæ stare dane
+        _context.ServiceTasks.RemoveRange(order.Tasks);
+
+        // Dodaj nowe zadania
+        order.Tasks = dto.Tasks.Select(t => new ServiceTask
+        {
+            Description = t.Description,
+            LaborCost = t.LaborCost,
+            UsedParts = t.UsedParts.Select(p => new UsedPart
+            {
+                PartName = p.PartName,
+                Quantity = p.Quantity,
+                UnitPrice = p.UnitPrice
+            }).ToList()
+        }).ToList();
+
+        await _context.SaveChangesAsync();
+    }
+
+
+    public async Task DeleteServiceOrderAsync(int id)
+    {
+        var order = await _context.ServiceOrders
+            .Include(o => o.Tasks)
+            .ThenInclude(t => t.UsedParts)
+            .Include(o => o.Comments)
+            .FirstOrDefaultAsync(o => o.Id == id);
+
+        if (order == null) return;
+
+        _context.Comments.RemoveRange(order.Comments);
+        foreach (var task in order.Tasks)
+        {
+            _context.UsedParts.RemoveRange(task.UsedParts);
+        }
+        _context.ServiceTasks.RemoveRange(order.Tasks);
+        _context.ServiceOrders.Remove(order);
+
+        await _context.SaveChangesAsync();
+    }
+
 }

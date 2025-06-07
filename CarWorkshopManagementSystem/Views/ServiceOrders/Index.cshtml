@@ -1,66 +1,40 @@
-@model IEnumerable<CarWorkshopManagementSystem.Models.Mechanic>
+@model IEnumerable<CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto>
 
 @{
-    ViewData["Title"] = "Mechanics";
-}
-@{
-    string firstName = Context.Request.Query["firstName"];
-    string lastName = Context.Request.Query["lastName"];
-    string email = Context.Request.Query["email"];
-    string phone = Context.Request.Query["phone"];
-    string sortBy = Context.Request.Query["sortBy"];
-    string sortOrder = Context.Request.Query["sortOrder"] == "desc" ? "asc" : "desc";
+    ViewData["Title"] = "Service Orders";
 }
 
-<h2>Mechanics</h2>
-<form method="get" class="mb-3">
-    <div class="row">
-        <div class="col">
-            <input type="text" name="firstName" value="@firstName" class="form-control" placeholder="First Name" />
-        </div>
-        <div class="col">
-            <input type="text" name="lastName" value="@lastName" class="form-control" placeholder="Last Name" />
-        </div>
-        <div class="col">
-            <input type="text" name="email" value="@email" class="form-control" placeholder="Email" />
-        </div>
-        <div class="col">
-            <input type="text" name="phone" value="@phone" class="form-control" placeholder="Phone" />
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-secondary">Search</button>
-        </div>
-    </div>
-</form>
+<h1>Service Orders</h1>
 
-<a asp-action="Create" class="btn btn-primary mb-3">Create Mechanic</a>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Order</a>
+</p>
 
-<table class="table">
+<table class="table table-striped">
     <thead>
-    <tr>
-        <th><a asp-route-sortBy="Id" asp-route-sortOrder="@sortOrder">ID</a></th>
-        <th><a asp-route-sortBy="FirstName" asp-route-sortOrder="@sortOrder">First Name</a></th>
-        <th><a asp-route-sortBy="LastName" asp-route-sortOrder="@sortOrder">Last Name</a></th>
-        <th><a asp-route-sortBy="Email" asp-route-sortOrder="@sortOrder">Email</a></th>
-        <th><a asp-route-sortBy="PhoneNumber" asp-route-sortOrder="@sortOrder">Phone</a></th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    @foreach (var m in Model)
-    {
         <tr>
-            <td>@m.Id</td>
-            <td>@m.FirstName</td>
-            <td>@m.LastName</td>
-            <td>@m.Email</td>
-            <td>@m.PhoneNumber</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@m.Id" class="btn btn-warning btn-sm">Edit</a>
-                <a asp-action="Delete" asp-route-id="@m.Id" class="btn btn-danger btn-sm ms-2">Delete</a>
-            </td>
+            <th>Vehicle</th>
+            <th>Mechanic</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Vehicle</td>
+                <td>@(order.Mechanic ?? "Not assigned")</td>
+                <td>@order.Status</td>
+                <td>@order.CreatedAt.ToShortDateString()</td>
+                <td>
+                     <a asp-action="Details" asp-route-id="@order.Id" class="btn btn-sm btn-outline-info">Details</a>
+ 		     <a asp-action="Edit" asp-route-id="@order.Id" class="btn btn-sm btn-outline-warning">Edit</a>
+    		     <a asp-action="Delete" asp-route-id="@order.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

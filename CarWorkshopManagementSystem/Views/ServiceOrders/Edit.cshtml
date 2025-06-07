@@ -1,29 +1,56 @@
-@model CarWorkshopManagementSystem.Models.Mechanic
+@model CarWorkshopManagementSystem.DTOs.ServiceOrders.EditServiceOrderDto
 
 @{
-    ViewData["Title"] = "Edit Mechanic";
+    ViewData["Title"] = "Edit Service Order";
 }
 
-<h2>Edit Mechanic</h2>
+<h1>Edit Service Order</h1>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit">
     <input type="hidden" asp-for="Id" />
 
-    <div class="form-group">
-        <label asp-for="FirstName"></label>
-        <input asp-for="FirstName" class="form-control" />
+    <div class="mb-3">
+        <label asp-for="MechanicId" class="form-label">Assigned Mechanic</label>
+        <select asp-for="MechanicId" class="form-select" asp-items="ViewBag.Mechanics">
+            <option value="">-- Select mechanic --</option>
+        </select>
     </div>
-    <div class="form-group">
-        <label asp-for="LastName"></label>
-        <input asp-for="LastName" class="form-control" />
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label">Status</label>
+        <select asp-for="Status" class="form-select">
+            @foreach (var status in ViewBag.Statuses as IEnumerable<SelectListItem>)
+            {
+                <option value="@status.Value">@status.Text</option>
+            }
+        </select>
     </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
+
+    <hr />
+    <h4>Service Tasks</h4>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input asp-for="Tasks[0].Description" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="PhoneNumber"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
+    <div class="mb-3">
+        <label class="form-label">Labor Cost</label>
+        <input asp-for="Tasks[0].LaborCost" class="form-control" type="number" step="0.01" />
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Update</button>
+
+    <h5>Used Part</h5>
+    <div class="mb-3">
+        <label class="form-label">Part Name</label>
+        <input asp-for="Tasks[0].UsedParts[0].PartName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input asp-for="Tasks[0].UsedParts[0].Quantity" class="form-control" type="number" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Unit Price</label>
+        <input asp-for="Tasks[0].UsedParts[0].UnitPrice" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
