@@ -4,6 +4,7 @@ using CarWorkshopManagementSystem.Services;
 using CarWorkshopManagementSystem.DTOs.ServiceOrders;
 using CarWorkshopManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Rotativa.AspNetCore;
 
 namespace CarWorkshopManagementSystem.Controllers;
 
@@ -167,5 +168,30 @@ public class ServiceOrdersController : Controller
         await _orderService.DeleteServiceOrderAsync(id);
         return RedirectToAction(nameof(Index));
     }
+
+    //PDF W DETAILS
+    [Authorize]
+    public async Task<IActionResult> DownloadDetailsPdf(int id)
+    {
+        var order = await _orderService.GetOrderByIdAsync(id);
+        if (order == null) return NotFound();
+
+        return new ViewAsPdf("Details", order)
+        {
+            FileName = $"ServiceOrder_{id}.pdf"
+        };
+    }
+
+    [Authorize]
+    public async Task<IActionResult> DownloadAllOrdersPdf()
+    {
+        var orders = await _orderService.GetAllAsync();
+
+        return new ViewAsPdf("Index", orders)
+        {
+            FileName = $"AllServiceOrders_{DateTime.Now:yyyyMMdd}.pdf"
+        };
+    }
+
 
 }

@@ -1,4 +1,4 @@
-@model IEnumerable<CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto>
+﻿@model IEnumerable<CarWorkshopManagementSystem.DTOs.ServiceOrders.ServiceOrderDetailsDto>
 
 @{
     ViewData["Title"] = "Service Orders";
@@ -9,6 +9,10 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New Order</a>
 </p>
+
+<a asp-action="DownloadAllOrdersPdf" class="btn btn-outline-secondary mb-3">
+    📥 Pobierz wszystkie zlecenia jako PDF
+</a>
 
 <table class="table table-striped">
     <thead>

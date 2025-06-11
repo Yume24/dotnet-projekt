@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CarWorkshopManagementSystem.Data;
 using CarWorkshopManagementSystem.Services;
+using Rotativa.AspNetCore;
 
 namespace CarWorkshopManagementSystem;
 
@@ -45,6 +46,8 @@ public class Program
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        app.UseRotativa();
 
         app.UseAuthentication();
         app.UseAuthorization();
