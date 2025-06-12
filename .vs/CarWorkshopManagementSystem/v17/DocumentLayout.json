@@ -86,8 +86,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Views\\ServiceOrders\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T20:09:32.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T20:09:32.413Z"
             },
             {
               "$type": "Document",
@@ -99,8 +98,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Views\\ServiceOrders\\Details.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T20:08:44.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T20:08:44.896Z"
             },
             {
               "$type": "Document",
@@ -125,8 +123,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Views\\ServiceOrders\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T07:29:30.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T07:29:30.029Z"
             },
             {
               "$type": "Document",
@@ -138,8 +135,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Controllers\\ServiceOrdersController.cs",
               "ViewState": "AQIAAK0AAAAAAAAAAAA/wMIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:57:54.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:57:54.596Z"
             },
             {
               "$type": "Document",
@@ -151,8 +147,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\ServiceOrderService.cs",
               "ViewState": "AQIAAIUAAAAAAAAAAAAowKQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:44:03.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:44:03.622Z"
             },
             {
               "$type": "Document",
@@ -164,8 +159,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\DTOs\\ServiceOrders\\ServiceOrderDtos.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:54:34.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:54:34.569Z"
             },
             {
               "$type": "Document",
@@ -177,8 +171,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-06T21:07:51.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T21:07:51.865Z"
             },
             {
               "$type": "Document",
@@ -190,8 +183,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Models\\Mechanic.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T21:17:23.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T21:17:23.813Z"
             },
             {
               "$type": "Document",
@@ -203,8 +195,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\IServiceOrderService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:41:14.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:41:14.79Z"
             },
             {
               "$type": "Document",
@@ -216,8 +207,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\MechanicService.cs",
               "ViewState": "AQIAADEAAAAAAAAAAAAswEYAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:59:50.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:59:50.029Z"
             },
             {
               "$type": "Document",
@@ -229,8 +219,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAmwBAAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T21:23:39.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T21:23:39.287Z"
             },
             {
               "$type": "Document",
@@ -253,8 +242,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\ClientService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:44:50.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:44:50.064Z"
             },
             {
               "$type": "Document",
@@ -266,8 +254,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Services\\IClientService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T20:44:33.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-06T20:44:33.253Z"
             },
             {
               "$type": "Document",
@@ -279,8 +266,7 @@
               "RelativeToolTip": "CarWorkshopManagementSystem\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T09:00:56.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T09:00:56.371Z"
             }
           ]
         }
