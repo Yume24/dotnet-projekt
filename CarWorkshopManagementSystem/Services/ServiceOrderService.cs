@@ -2,6 +2,7 @@ using CarWorkshopManagementSystem.Data;
 using CarWorkshopManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 using CarWorkshopManagementSystem.DTOs.ServiceOrders;
+using CarWorkshopManagementSystem.PdfReports;
 
 
 namespace CarWorkshopManagementSystem.Services;
@@ -82,7 +83,7 @@ public class ServiceOrderService : IServiceOrderService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"B³¹d przy pobieraniu zlecenia ID: {id}");
+            _logger.LogError(ex, $"Bï¿½ï¿½d przy pobieraniu zlecenia ID: {id}");
             throw;
         }
     }
@@ -132,7 +133,7 @@ public class ServiceOrderService : IServiceOrderService
         order.MechanicId = dto.MechanicId;
         order.Status = dto.Status;
 
-        // Wyczyœæ stare dane
+        // Wyczyï¿½ï¿½ stare dane
         _context.ServiceTasks.RemoveRange(order.Tasks);
 
         // Dodaj nowe zadania
@@ -171,6 +172,20 @@ public class ServiceOrderService : IServiceOrderService
         _context.ServiceOrders.Remove(order);
 
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<byte[]> GenerateOrderPdfAsync(int id)
+    {
+        var order = await GetOrderByIdAsync(id);
+        if (order == null)
+            throw new InvalidOperationException($"Zlecenie {id} nie istnieje.");
+
+        return ServiceOrderPdfGenerator.Generate(order);
+    }
+    public async Task<byte[]> GenerateAllOrdersPdfAsync()
+    {
+        var orders = await GetAllAsync();
+        return AllOrdersPdfGenerator.Generate(orders);
     }
 
 }

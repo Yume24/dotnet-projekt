@@ -15,5 +15,7 @@ public interface IServiceOrderService
     Task<bool> UpdateStatusAsync(int orderId, ServiceOrderStatus status);
     Task UpdateServiceOrderAsync(EditServiceOrderDto dto);
     Task DeleteServiceOrderAsync(int id);
+    Task<byte[]> GenerateOrderPdfAsync(int id);
+    Task<byte[]> GenerateAllOrdersPdfAsync();
 
 }

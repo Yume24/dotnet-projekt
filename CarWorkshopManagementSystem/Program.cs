@@ -42,6 +42,7 @@ public class Program
         builder.Services.AddScoped<IServiceOrderService, ServiceOrderService>();
 
         var app = builder.Build();
+        QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

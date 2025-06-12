@@ -34,7 +34,7 @@ public class ServiceOrdersController : Controller
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "B³¹d przy ³adowaniu listy zleceñ.");
+            _logger.LogError(ex, "Bï¿½ï¿½d przy ï¿½adowaniu listy zleceï¿½.");
             return View("Error");
         }
     }
@@ -52,7 +52,7 @@ public class ServiceOrdersController : Controller
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"B³¹d w Details dla ID={id}");
+            _logger.LogError(ex, $"Bï¿½ï¿½d w Details dla ID={id}");
             return View("Error");
         }
     }
@@ -129,7 +129,7 @@ public class ServiceOrdersController : Controller
         var order = await _orderService.GetOrderByIdAsync(id);
         if (order == null) return NotFound();
 
-        // przekszta³æ na EditServiceOrderDto
+        // przeksztaï¿½ï¿½ na EditServiceOrderDto
         var dto = new EditServiceOrderDto
         {
             Id = order.Id,
@@ -176,7 +176,7 @@ public class ServiceOrdersController : Controller
         var order = await _orderService.GetOrderByIdAsync(id);
         if (order == null) return NotFound();
 
-        return View(order); // zak³ada, ¿e masz ServiceOrderDetailsDto
+        return View(order); // zakï¿½ada, ï¿½e masz ServiceOrderDetailsDto
     }
 
     // POST: /ServiceOrders/DeleteConfirmed
@@ -190,27 +190,38 @@ public class ServiceOrdersController : Controller
 
     //PDF W DETAILS
     [Authorize]
+    [Authorize]
     public async Task<IActionResult> DownloadDetailsPdf(int id)
     {
-        var order = await _orderService.GetOrderByIdAsync(id);
-        if (order == null) return NotFound();
-
-        return new ViewAsPdf("Details", order)
+        try
         {
-            FileName = $"ServiceOrder_{id}.pdf"
-        };
+            var pdfBytes = await _orderService.GenerateOrderPdfAsync(id);
+            return File(pdfBytes, "application/pdf", $"ServiceOrder_{id}.pdf");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"BÅ‚Ä…d generowania PDF dla ID={id}");
+            return View("Error");
+        }
     }
 
+
+    [Authorize]
     [Authorize]
     public async Task<IActionResult> DownloadAllOrdersPdf()
     {
-        var orders = await _orderService.GetAllAsync();
-
-        return new ViewAsPdf("Index", orders)
+        try
         {
-            FileName = $"AllServiceOrders_{DateTime.Now:yyyyMMdd}.pdf"
-        };
+            var pdfBytes = await _orderService.GenerateAllOrdersPdfAsync();
+            return File(pdfBytes, "application/pdf", $"AllServiceOrders_{DateTime.Now:yyyyMMdd}.pdf");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "BÅ‚Ä…d generowania PDF wszystkich zleceÅ„");
+            return View("Error");
+        }
     }
+
 
 
 }
