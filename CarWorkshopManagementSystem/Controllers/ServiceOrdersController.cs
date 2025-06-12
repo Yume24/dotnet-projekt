@@ -14,30 +14,49 @@ public class ServiceOrdersController : Controller
     private readonly IServiceOrderService _orderService;
     private readonly IMechanicService _mechanicService;
     private readonly IVehicleService _vehicleService;
+    private readonly ILogger<ServiceOrdersController> _logger;
 
-    public ServiceOrdersController(IServiceOrderService orderService, IMechanicService mechanicService, IVehicleService vehicleService)
+    public ServiceOrdersController(IServiceOrderService orderService, IMechanicService mechanicService, IVehicleService vehicleService, ILogger<ServiceOrdersController> logger)
     {
         _orderService = orderService;
         _mechanicService = mechanicService;
         _vehicleService = vehicleService;
+        _logger = logger;
     }
 
     // GET: /ServiceOrders
     public async Task<IActionResult> Index()
     {
-        var orders = await _orderService.GetAllAsync();
-        return View(orders);
+        try
+        {
+            var orders = await _orderService.GetAllAsync();
+            return View(orders);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "B³¹d przy ³adowaniu listy zleceñ.");
+            return View("Error");
+        }
     }
 
     // GET: /ServiceOrders/Details/5
     public async Task<IActionResult> Details(int id)
     {
-        var order = await _orderService.GetOrderByIdAsync(id);
-        if (order == null)
-            return NotFound();
+        try
+        {
+            var order = await _orderService.GetOrderByIdAsync(id);
+            if (order == null)
+                return NotFound();
 
-        return View(order);
+            return View(order);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"B³¹d w Details dla ID={id}");
+            return View("Error");
+        }
     }
+
 
     // GET: /ServiceOrders/Create
     [HttpGet]

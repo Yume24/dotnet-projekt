@@ -1,8 +1,10 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CarWorkshopManagementSystem.Data;
 using CarWorkshopManagementSystem.Services;
 using Rotativa.AspNetCore;
+using NLog.Web;
+using NLog;
 
 namespace CarWorkshopManagementSystem;
 
@@ -10,11 +12,22 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
+        var logger = NLog.Web.NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+        try
+        {
+            logger.Debug("Start aplikacji");
+            var builder = WebApplication.CreateBuilder(args);
+
+            builder.Logging.ClearProviders();
+            builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+            builder.Host.UseNLog();
+
+            // Add services to the container.
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                                throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+        
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -76,5 +89,16 @@ public class Program
         }
 
         app.Run();
+        }
+        catch (Exception ex)
+        {
+            logger.Error(ex, "Błąd krytyczny przy starcie aplikacji");
+            throw;
+        }
+        finally
+        {
+            LogManager.Shutdown();
+        }
+
     }
 }

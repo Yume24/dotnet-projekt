@@ -12,10 +12,12 @@ namespace CarWorkshopManagementSystem.Services;
 public class ServiceOrderService : IServiceOrderService
 {
     private readonly ApplicationDbContext _context;
+    private readonly ILogger<ServiceOrderService> _logger;
 
-    public ServiceOrderService(ApplicationDbContext context)
+    public ServiceOrderService(ApplicationDbContext context, ILogger<ServiceOrderService> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
     public async Task<int> CreateServiceOrderAsync(CreateServiceOrderDto dto)
@@ -43,7 +45,9 @@ public class ServiceOrderService : IServiceOrderService
 
     public async Task<ServiceOrderDetailsDto?> GetOrderByIdAsync(int id)
     {
-        return await _context.ServiceOrders
+        try
+        {
+            return await _context.ServiceOrders
             .Include(o => o.Vehicle)
             .Include(o => o.Mechanic)
             .Include(o => o.Tasks).ThenInclude(t => t.UsedParts)
@@ -75,6 +79,12 @@ public class ServiceOrderService : IServiceOrderService
                     Timestamp = c.Timestamp
                 }).ToList()
             }).FirstOrDefaultAsync();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, $"B³¹d przy pobieraniu zlecenia ID: {id}");
+            throw;
+        }
     }
 
     public async Task<List<ServiceOrderDetailsDto>> GetAllAsync()
