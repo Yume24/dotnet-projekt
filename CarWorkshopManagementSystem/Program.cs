@@ -61,8 +61,6 @@ public class Program
 
         app.UseRouting();
 
-        app.UseRotativa();
-
         app.UseAuthentication();
         app.UseAuthorization();
 

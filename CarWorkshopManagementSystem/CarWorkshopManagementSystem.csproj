@@ -46,4 +46,10 @@
       <Folder Include="wwwroot\uploads\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\Rotativa\wkhtmltoimage.exe" />
+      <_ContentIncludedByDefault Remove="wwwroot\Rotativa\wkhtmltopdf.exe" />
+      <_ContentIncludedByDefault Remove="wwwroot\Rotativa\wkhtmltox.dll" />
+    </ItemGroup>
+
 </Project>
