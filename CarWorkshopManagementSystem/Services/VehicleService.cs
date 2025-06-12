@@ -12,6 +12,24 @@ public class VehicleService : IVehicleService
     {
         _context = context;
     }
+    private async Task<string?> SaveImageAsync(IFormFile? imageFile)
+    {
+        if (imageFile == null || imageFile.Length == 0) return null;
+
+        var uploadsPath = Path.Combine("wwwroot", "uploads");
+        if (!Directory.Exists(uploadsPath))
+            Directory.CreateDirectory(uploadsPath);
+
+        var uniqueFileName = Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+        var filePath = Path.Combine(uploadsPath, uniqueFileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await imageFile.CopyToAsync(stream);
+        }
+
+        return "/uploads/" + uniqueFileName;
+    }
 
     public async Task<List<Vehicle>> GetAllVehiclesAsync()
     {
@@ -53,27 +71,40 @@ public class VehicleService : IVehicleService
 
         return await _context.Clients.FirstOrDefaultAsync(c => c.Id == vehicle.OwnerId);
     }
-    public async Task<bool> CreateVehicleAsync(Vehicle vehicle)
+    public async Task<bool> CreateVehicleAsync(Vehicle vehicle, IFormFile? imageFile)
     {
         try
         {
+            vehicle.ImageUrl = await SaveImageAsync(imageFile);
             _context.Vehicles.Add(vehicle);
             await _context.SaveChangesAsync();
             return true;
         }
-        catch { return false; }
+        catch
+        {
+            return false;
+        }
     }
 
-    public async Task<bool> UpdateVehicleAsync(Vehicle vehicle)
+    public async Task<bool> UpdateVehicleAsync(Vehicle vehicle, IFormFile? imageFile)
     {
         try
         {
+            if (imageFile != null)
+            {
+                vehicle.ImageUrl = await SaveImageAsync(imageFile);
+            }
+
             _context.Vehicles.Update(vehicle);
             await _context.SaveChangesAsync();
             return true;
         }
-        catch { return false; }
+        catch
+        {
+            return false;
+        }
     }
+
 
     public async Task<bool> DeleteVehicleAsync(int id)
     {

@@ -43,6 +43,7 @@
             <th><a asp-route-sortBy="Model" asp-route-sortOrder="@sortOrder">Model</a></th>
             <th><a asp-route-sortBy="Year" asp-route-sortOrder="@sortOrder">Year</a></th>
             <th><a asp-route-sortBy="LicensePlate" asp-route-sortOrder="@sortOrder">License Plate</a></th>
+            <th>Image</th>
             <th>Details</th>
         </tr>
     </thead>
@@ -55,6 +56,13 @@
             <td>@v.Model</td>
             <td>@v.Year</td>
             <td>@v.LicensePlate</td>
+            <td>
+                @if (!string.IsNullOrEmpty(@v.ImageUrl))
+                {
+                    <img src="@v.ImageUrl" alt="Vehicle photo" style="max-width: 200px;" />
+                }
+
+            </td>
             <td>
                 <a asp-action="Owner" asp-route-id="@v.Id" class="btn btn-info btn-sm">Owner</a>
 

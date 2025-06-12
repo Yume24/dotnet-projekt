@@ -1,27 +1,47 @@
 @model CarWorkshopManagementSystem.Models.Vehicle
 
-<h2>Create Vehicle</h2>
-<form asp-action="Edit" method="post">
+<h2>Edit Vehicle</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
+
     <div class="form-group">
         <label asp-for="Brand"></label>
-        <input asp-for="Brand" class="form-control"/>
+        <input asp-for="Brand" class="form-control" />
     </div>
+
     <div class="form-group">
         <label asp-for="Model"></label>
-        <input asp-for="Model" class="form-control"/>
+        <input asp-for="Model" class="form-control" />
     </div>
+
     <div class="form-group">
         <label asp-for="Year"></label>
-        <input asp-for="Year" class="form-control"/>
+        <input asp-for="Year" class="form-control" />
     </div>
+
     <div class="form-group">
         <label asp-for="LicensePlate"></label>
-        <input asp-for="LicensePlate" class="form-control"/>
+        <input asp-for="LicensePlate" class="form-control" />
     </div>
+
     <div class="form-group">
         <label asp-for="OwnerId"></label>
-        <input asp-for="OwnerId" class="form-control"/>
+        <input asp-for="OwnerId" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <div class="form-group">
+            <label>Current Image</label><br />
+            <img src="@Model.ImageUrl" alt="Current Image" style="max-width: 200px;" />
+        </div>
+    }
+
+    <div class="form-group">
+        <label for="imageFile">Upload New Image</label>
+        <input type="file" name="imageFile" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
 </form>

@@ -15,4 +15,6 @@ public class Vehicle
     public string LicensePlate { get; set; }
     [Required]
     public int OwnerId { get; set; }
+    public string? ImageUrl { get; set; }
+
 }

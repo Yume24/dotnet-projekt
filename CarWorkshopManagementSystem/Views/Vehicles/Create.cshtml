@@ -1,7 +1,7 @@
 @model CarWorkshopManagementSystem.Models.Vehicle
 
 <h2>Create Vehicle</h2>
-<form asp-action="Create" method="post">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Brand"></label>
         <input asp-for="Brand" class="form-control" />
@@ -21,6 +21,10 @@
     <div class="form-group">
         <label asp-for="OwnerId"></label>
         <input asp-for="OwnerId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="ImageFile">Upload Image</label>
+        <input id="ImageFile" type="file" name="ImageFile" class="form-control" />
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>

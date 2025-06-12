@@ -8,6 +8,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="PerformanceTests\**" />
+      <Content Remove="PerformanceTests\**" />
+      <EmbeddedResource Remove="PerformanceTests\**" />
+      <None Remove="PerformanceTests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
     </ItemGroup>
 
@@ -27,12 +34,15 @@
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+        <PackageReference Include="NBomber" Version="6.0.2" />
+        <PackageReference Include="NBomber.Http" Version="6.0.2" />
         <PackageReference Include="NLog.Web.AspNetCore" Version="5.5.0" />
         <PackageReference Include="Rotativa.AspNetCore" Version="1.4.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Migrations\" />
+      <Folder Include="wwwroot\uploads\" />
     </ItemGroup>
 
 </Project>

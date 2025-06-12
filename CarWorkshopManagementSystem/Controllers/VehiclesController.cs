@@ -44,38 +44,38 @@ public class VehiclesController : Controller
 
     [HttpPost]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Create(Vehicle vehicle)
+    public async Task<IActionResult> Create(Vehicle vehicle, IFormFile? imageFile)
     {
         if (!ModelState.IsValid) return View(vehicle);
 
-        var success = await _vehicleService.CreateVehicleAsync(vehicle);
+        var success = await _vehicleService.CreateVehicleAsync(vehicle, imageFile);
         if (!success)
-            ModelState.AddModelError("", "Could not create vehicle.");
+            return View(vehicle);
 
         return RedirectToAction(nameof(Index));
     }
+
 
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id)
     {
         var vehicle = await _vehicleService.GetVehicleByIdAsync(id);
         if (vehicle == null) return NotFound();
-
         return View(vehicle);
     }
-
+    
     [HttpPost]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Edit(Vehicle vehicle)
+    public async Task<IActionResult> Edit(Vehicle vehicle, IFormFile? imageFile)
     {
         if (!ModelState.IsValid) return View(vehicle);
 
-        var success = await _vehicleService.UpdateVehicleAsync(vehicle);
-        if (!success)
-            ModelState.AddModelError("", "Update failed.");
+        var result = await _vehicleService.UpdateVehicleAsync(vehicle, imageFile);
+        if (!result) return View(vehicle);
 
         return RedirectToAction(nameof(Index));
     }
+    
 
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
